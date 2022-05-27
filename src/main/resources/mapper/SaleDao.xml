@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wyh.bookstore.dao.SaleDao">
+
+    <resultMap type="com.wyh.bookstore.entity.Sale" id="saleMap">
+        <result property="bookid" column="bookid"/>
+        <result property="bookname" column="bookname"/>
+        <result property="outprice" column="outprice"/>
+        <result property="quantity" column="quantity"/>
+        <result property="type" column="type"/>
+        <result property="customerid" column="customerid"/>
+        <result property="customername" column="customername"/>
+        <result property="time" column="time"/>
+    </resultMap>
+
+
+
+    <select id= "selectAllSale"  resultMap="saleMap">
+        select
+            bookid,bookname,outprice,quantity,type,customerid,customername,time
+        from sale
+    </select>
+
+</mapper>

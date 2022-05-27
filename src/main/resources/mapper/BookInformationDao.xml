@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wyh.bookstore.dao.BookInformationDao">
+
+    <resultMap type="com.wyh.bookstore.entity.BookInformation" id="bookinforMap">
+        <result property="bookid" column="bookid"/>
+        <result property="bookname" column="bookname"/>
+        <result property="url" column="url"/>
+        <result property="type" column="type"/>
+    </resultMap>
+
+
+
+    <select id= "selectAllBookInfor"  resultMap="bookinforMap">
+        select
+            bookid,bookname,url,type
+        from bookinformation
+    </select>
+
+</mapper>

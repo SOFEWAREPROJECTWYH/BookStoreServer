@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wyh.bookstore.dao.ShoppingTrolleyDao">
+
+    <resultMap type="com.wyh.bookstore.entity.ShoppingTrolley" id="shopMap">
+        <result property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="shoptrobookid" column="shoptrobookid"/>
+        <result property="shoptrobookname" column="shoptrobookname"/>
+        <result property="shoptrobookurl" column="shoptrobookurl"/>
+    </resultMap>
+    <insert id="insertShoppingTrolley">
+        INSERT INTO shoppingtrolley values (#{id},#{username},#{shoptrobookid},
+        #{shoptrobookname},#{shoptrobookurl},#{shoptrobookprice})
+    </insert>
+    <delete id="deleteShoppingTrolley">
+        delete from shoppingtrolley  where id=#{id}
+    </delete>
+
+
+    <select id= "initShoppingTrolley"  resultMap="shopMap">
+        INSERT INTO shoppingtrolley values (#{id},#{username})
+    </select>
+    <select id="getShoppingTrolley" resultType="com.wyh.bookstore.entity.ShoppingTrolley">
+        SELECT
+            id,username,shoptrobookid,shoptrobookname,shoptrobookurl,shoptrobookprice
+        from shoppingtrolley
+        where id=#{id}
+    </select>
+
+</mapper>

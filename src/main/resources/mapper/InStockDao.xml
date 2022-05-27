@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wyh.bookstore.dao.InStockDao">
+
+    <resultMap type="com.wyh.bookstore.entity.InStock" id="instockMap">
+        <result property="bookid" column="bookid"/>
+        <result property="bookname" column="bookname"/>
+        <result property="inprice" column="inprice"/>
+        <result property="quantity" column="quantity"/>
+        <result property="type" column="type"/>
+        <result property="booksource" column="booksource"/>
+        <result property="time" column="time"/>
+    </resultMap>
+
+
+
+    <select id= "getInStock"  resultMap="instockMap">
+        select
+            bookid,bookname,inprice,quantity,type,booksource,time
+        from instock
+    </select>
+
+</mapper>
