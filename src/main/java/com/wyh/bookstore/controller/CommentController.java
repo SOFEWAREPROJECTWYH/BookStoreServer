@@ -6,10 +6,7 @@ import com.wyh.bookstore.entity.Sale;
 import com.wyh.bookstore.service.CommentService;
 import com.wyh.bookstore.service.SaleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -21,9 +18,15 @@ public class CommentController {
     @Autowired
     private CommentService commentService;
 
-    @RequestMapping(value = "/comment",method = RequestMethod.GET)
-    public Comments getBookInfo() {
+    @RequestMapping(value = "/commentInfo",method = RequestMethod.GET)
+    public Comments getCommentInfo() {
         List<Comment> commentList = commentService.getCommentInfo();
+        Comments comments=new Comments(commentList);
+        return comments;
+    }
+    @RequestMapping(value = "/searchComment",method = RequestMethod.POST)
+    public Comments getSearchCommentInfo(@RequestParam String name) {
+        List<Comment> commentList = commentService.getSearchCommentInfo();
         Comments comments=new Comments(commentList);
         return comments;
     }

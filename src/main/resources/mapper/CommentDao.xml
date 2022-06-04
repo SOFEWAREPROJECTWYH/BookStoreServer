@@ -4,6 +4,7 @@
 <mapper namespace="com.wyh.bookstore.dao.CommentDao">
 
     <resultMap type="com.wyh.bookstore.entity.Comment" id="commentMap">
+        <result property="id" column="id"/>
         <result property="name" column="name"/>
         <result property="url" column="url"/>
         <result property="title" column="title"/>
@@ -15,8 +16,14 @@
     </resultMap>
     <select id="getCommentInfo" resultType="com.wyh.bookstore.entity.Comment">
         select
-            name,url,title,content,bookurl,like,comment,share
+            id,name,url,title,content,bookurl,`like`,comment,share
         from share
+    </select>
+    <select id="getSearchCommentInfo" resultType="com.wyh.bookstore.entity.Comment">
+        select
+            id,name,url,title,content,bookurl,`like`,comment,share
+        from share
+        where name like('%${name}%')
     </select>
 
 
