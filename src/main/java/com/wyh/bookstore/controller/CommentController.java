@@ -25,8 +25,8 @@ public class CommentController {
         return comments;
     }
     @RequestMapping(value = "/searchComment",method = RequestMethod.POST)
-    public Comments getSearchCommentInfo(@RequestParam String name) {
-        List<Comment> commentList = commentService.getSearchCommentInfo();
+    public Comments getSearchCommentInfo(@RequestBody Comment comment) {
+        List<Comment> commentList = commentService.getSearchCommentInfo(comment);
         Comments comments=new Comments(commentList);
         return comments;
     }

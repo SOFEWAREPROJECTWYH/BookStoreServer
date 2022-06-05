@@ -18,7 +18,7 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public List<Comment> getSearchCommentInfo() {
-        return commentDao.getSearchCommentInfo();
+    public List<Comment> getSearchCommentInfo(Comment comment) {
+        return commentDao.getSearchCommentInfo(comment);
     }
 }

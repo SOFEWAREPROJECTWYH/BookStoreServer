@@ -7,5 +7,5 @@ import java.util.List;
 @Mapper
 public interface CommentDao {
     List<Comment> getCommentInfo();
-    List<Comment> getSearchCommentInfo();
+    List<Comment> getSearchCommentInfo(Comment comment);
 }

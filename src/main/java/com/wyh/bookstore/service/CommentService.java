@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface CommentService {
     List<Comment> getCommentInfo();
-    List<Comment> getSearchCommentInfo();
+    List<Comment> getSearchCommentInfo(Comment comment);
 }

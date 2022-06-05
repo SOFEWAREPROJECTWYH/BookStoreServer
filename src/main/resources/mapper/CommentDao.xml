@@ -23,7 +23,7 @@
         select
             id,name,url,title,content,bookurl,`like`,comment,share
         from share
-        where name like('%${name}%')
+        where title like concat('%',#{title},'%')
     </select>
 
 
