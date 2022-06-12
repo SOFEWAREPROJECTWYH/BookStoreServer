@@ -28,4 +28,14 @@ public class UserServiceImpl implements UserService {
         return userDao.register(user);
     }
 
+    @Override
+    public Integer deleteUser(User user) {
+        return userDao.deleteUser(user);
+    }
+
+    @Override
+    public Integer updateUser(User user) {
+        return userDao.updateUser(user);
+    }
+
 }

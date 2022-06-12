@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wyh.bookstore.dao.CollectDao">
+
+    <resultMap type="com.wyh.bookstore.entity.Collect" id="collectinforMap">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="bookid" column="bookid"/>
+        <result property="bookname" column="bookname"/>
+    </resultMap>
+
+
+
+    <insert id="insertCollectInfo">
+        insert into collect values (#{id},#{name},#{bookid},#{bookname})
+    </insert>
+    <delete id="deleteCollectInfo">
+        delete from collect where id=#{id}
+    </delete>
+
+</mapper>

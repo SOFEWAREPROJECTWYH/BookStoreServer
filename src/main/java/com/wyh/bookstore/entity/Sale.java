@@ -10,6 +10,6 @@ public class Sale {
     private Integer quantity;
     private String type;
     private Integer customerid;
-    private Integer customername;
+    private String customername;
     private String time;
 }

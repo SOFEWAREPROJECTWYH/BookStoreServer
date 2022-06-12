@@ -8,4 +8,6 @@ public interface UserService {
     List<User> getUserInfo();
     User getUserExistInfo(Integer id);
     Integer register(User user);
+    Integer deleteUser(User user);
+    Integer updateUser(User user);
 }

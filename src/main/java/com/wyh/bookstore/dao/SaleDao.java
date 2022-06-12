@@ -8,4 +8,7 @@ import java.util.List;
 @Mapper
 public interface SaleDao {
     List<Sale> selectAllSale();
+    Integer insertSale(Sale sale);
+    Integer deleteSale(Sale sale);
+    Integer updateSale(Sale sale);
 }

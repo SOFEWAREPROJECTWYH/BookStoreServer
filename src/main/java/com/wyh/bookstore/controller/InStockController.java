@@ -22,12 +22,23 @@ public class InStockController {
     private InStockService inStockService;
 
     @RequestMapping(value = "/instock",method = RequestMethod.GET)
-    public Map<String, Object> getBookInfo() {
+    public List<InStock> getBookInfo() {
         List<InStock> inStocks = inStockService.getInStockInfo();
-        HashMap<String, Object> response= new HashMap<>();
-        response.put("code","200");
-        response.put("msg","success");
-        response.put("data",inStocks);
-        return response;
+        return inStocks;
+    }
+    @RequestMapping(value = "/insertInstock",method = RequestMethod.GET)
+    public Integer insertInstock(InStock inStock) {
+        Integer insertCondition = inStockService.insertInStock(inStock);
+        return insertCondition;
+    }
+    @RequestMapping(value = "/deleteInstock",method = RequestMethod.GET)
+    public Integer deleteInstock(InStock inStock) {
+        Integer deleteCondition = inStockService.deleteInStock(inStock);
+        return deleteCondition;
+    }
+    @RequestMapping(value = "/updateInstock",method = RequestMethod.GET)
+    public Integer updateInstock(InStock inStock) {
+        Integer updateCondition = inStockService.updateInStock(inStock);
+        return updateCondition;
     }
 }

@@ -17,4 +17,19 @@ public class SaleServiceImpl implements SaleService {
     public List<Sale> getSaleInfo() {
         return saleDao.selectAllSale();
     }
+
+    @Override
+    public Integer insertSale(Sale sale) {
+        return saleDao.insertSale(sale);
+    }
+
+    @Override
+    public Integer deleteSale(Sale sale) {
+        return saleDao.deleteSale(sale);
+    }
+
+    @Override
+    public Integer updateSale(Sale sale) {
+        return saleDao.updateSale(sale);
+    }
 }

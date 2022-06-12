@@ -11,6 +11,17 @@
         <result property="type" column="type"/>
         <result property="url" column="url"/>
     </resultMap>
+    <insert id="insertBook">
+        insert into book values(#{bookid},#{bookname},#{price},#{quantity},#{type},#{url})
+    </insert>
+    <update id="updateBook">
+        update book set bookname=#{bookname},price=#{price},quantity=#{quantity}
+            ,type=#{type} where bookid=#{bookid}
+    </update>
+    <delete id="deleteBook">
+        delete from book where bookid=#{bookid}
+    </delete>
+
 
 
 

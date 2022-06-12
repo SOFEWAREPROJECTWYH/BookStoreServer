@@ -23,12 +23,23 @@ public class SaleController {
     private SaleService saleService;
 
     @RequestMapping(value = "/sale",method = RequestMethod.GET)
-    public Map<String, Object> getBookInfo() {
+    public List<Sale> getBookInfo() {
         List<Sale> saleList = saleService.getSaleInfo();
-        HashMap<String, Object> response= new HashMap<>();
-        response.put("code","200");
-        response.put("msg","success");
-        response.put("data",saleList);
-        return response;
+        return saleList;
+    }
+    @RequestMapping(value = "/insertSale",method = RequestMethod.GET)
+    public Integer insertSaleInfo(Sale sale) {
+        Integer insertCondition = saleService.insertSale(sale);
+        return insertCondition;
+    }
+    @RequestMapping(value = "/deleteSale",method = RequestMethod.GET)
+    public Integer deleteSaleInfo(Sale sale) {
+        Integer insertCondition = saleService.deleteSale(sale);
+        return insertCondition;
+    }
+    @RequestMapping(value = "/updateSale",method = RequestMethod.GET)
+    public Integer updateSaleInfo(Sale sale) {
+        Integer updateCondition = saleService.updateSale(sale);
+        return updateCondition;
     }
 }

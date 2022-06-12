@@ -12,7 +12,18 @@
         <result property="booksource" column="booksource"/>
         <result property="time" column="time"/>
     </resultMap>
-
+    <insert id="insertInstock">
+        insert into instock values(#{bookid},#{bookname},#{inprice},#{quantity},
+                                   #{type},#{booksource},#{time})
+    </insert>
+    <update id="updateInstock">
+        update instock set bookid=#{bookid},bookname=#{bookname},inprice=#{inprice},
+                           quantity=#{quantity},type=#{type},booksource=#{booksource}
+                            ,time=#{time} where bookid=#{bookid}
+    </update>
+    <delete id="deleteInstock">
+        delete from instock where bookid=#{bookid}
+    </delete>
 
 
     <select id= "getInStock"  resultMap="instockMap">

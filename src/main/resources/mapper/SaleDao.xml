@@ -13,7 +13,18 @@
         <result property="customername" column="customername"/>
         <result property="time" column="time"/>
     </resultMap>
-
+    <insert id="insertSale">
+        insert into sale values(#{bookid},#{bookname},#{outprice},#{quantity},
+        #{type},#{customerid},#{customername},#{time})
+    </insert>
+    <update id="updateSale">
+        update sale set bookid=#{bookid},bookname=#{bookname},outprice=#{outprice},quantity=#{quantity},
+                        type=#{type},customerid=#{customerid},customername=#{customername},time=#{time}
+        where bookid=#{bookid}
+    </update>
+    <delete id="deleteSale">
+        delete from sale where bookid=#{bookid}
+    </delete>
 
 
     <select id= "selectAllSale"  resultMap="saleMap">

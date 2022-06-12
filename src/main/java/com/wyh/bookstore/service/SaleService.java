@@ -6,4 +6,7 @@ import java.util.List;
 
 public interface SaleService {
     List<Sale> getSaleInfo();
+    Integer insertSale(Sale sale);
+    Integer deleteSale(Sale sale);
+    Integer updateSale(Sale sale);
 }

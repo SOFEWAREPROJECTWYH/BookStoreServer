@@ -7,6 +7,7 @@ import com.wyh.bookstore.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,5 +35,19 @@ public class BookController {
         inventories.setInventoryList(inventoryList);
         return inventories;
     }
-
+    @RequestMapping(value = "/insertBook",method = RequestMethod.GET)
+    public Integer insertBook(Inventory book){
+        Integer insertCondition=bookService.insertBook(book);
+        return insertCondition;
+    }
+    @RequestMapping(value = "/deleteBook",method = RequestMethod.GET)
+    public Integer deleteBook(Inventory book){
+        Integer deleteCondition=bookService.deleteBook(book);
+        return deleteCondition;
+    }
+    @RequestMapping(value = "/updateBook",method = RequestMethod.GET)
+    public Integer updateBook(Inventory book){
+        Integer updateCondition=bookService.updateBook(book);
+        return updateCondition;
+    }
 }

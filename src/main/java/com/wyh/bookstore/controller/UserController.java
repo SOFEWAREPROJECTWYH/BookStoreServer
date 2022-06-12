@@ -32,5 +32,14 @@ public class UserController {
         List<User> users = userService.getUserInfo();
         return users;
     }
-
+    @RequestMapping(value = "/deleteUser",method = RequestMethod.GET)
+    public Integer deleteUser(User user){
+        Integer deleteCondition = userService.deleteUser(user);
+        return deleteCondition;
+    }
+    @RequestMapping(value = "/updateUser",method = RequestMethod.GET)
+    public Integer updateUser(User user){
+        Integer updateCondition = userService.updateUser(user);
+        return updateCondition;
+    }
 }

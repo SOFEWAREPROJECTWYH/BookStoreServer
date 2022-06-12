@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wyh.bookstore.dao.ToSendDao">
+
+    <resultMap type="com.wyh.bookstore.entity.ToSend" id="toSendMap">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="bookid" column="bookid"/>
+        <result property="bookname" column="bookname"/>
+        <result property="quantity" column="quantity"/>
+    </resultMap>
+    <select id="getToSendInfo" resultType="com.wyh.bookstore.entity.ToSend">
+        select
+            id,name,bookid,bookname,quantity
+        from tosend
+    </select>
+
+
+</mapper>

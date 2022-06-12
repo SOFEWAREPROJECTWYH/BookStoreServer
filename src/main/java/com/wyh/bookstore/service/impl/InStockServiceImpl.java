@@ -18,4 +18,19 @@ public class InStockServiceImpl implements InStockService {
     public List<InStock> getInStockInfo() {
         return inStockDao.getInStock();
     }
+
+    @Override
+    public Integer insertInStock(InStock inStock) {
+        return inStockDao.insertInstock(inStock);
+    }
+
+    @Override
+    public Integer deleteInStock(InStock inStock) {
+        return inStockDao.deleteInstock(inStock);
+    }
+
+    @Override
+    public Integer updateInStock(InStock inStock) {
+        return inStockDao.updateInstock(inStock);
+    }
 }
